@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Portfolio</title>
+
+  <style>
+    body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.project-card {
+  background-color: #222;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: 30%;
+  background-color: #222;
+}
+
+.project-card:hover .demo-link {
+  display: block;
+}
+
+.project-image img {
+  width: 100%;
+  height: 70%;
+  transition: transform 0.3s ease;
+}
+
+.project-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-info h2 {
+  margin: 0;
+}
+
+.demo-link {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  line-height: 2;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="project-card" onclick="toggleDemo('demo1')">
+    <div class="project-image">
+      <img src="Features/ecommerce.png" alt="" />
+    </div>
+    <h2>Bags</h2>
+    <div class="demo">
+      <a href="https://bags-three.vercel.app/?category=large#collection">demo</a>
+    </div>
+  </div>
+  <div class="project-card" onclick="toggleDemo('demo2')">
+    <div class="project-image">
+      <img src="Features/Animes.png" alt="" />
+    </div>
+    <h2>Anime - server action</h2>
+  </div>
+  <div class="project-card" onclick="toggleDemo('demo3')">
+    <div class="project-image">
+      <img src="Features/porfolioImg.png" alt="">
+    </div>
+    <h2>My Portfolio</h2>
+  </div>
+
+  <script>
+    function toggleDemo(id) {
+      var demoLink = document.getElementById(id);
+      if (demoLink.style.display === 'none' || demoLink.style.display === '') {
+        demoLink.style.display = 'block';
+      } else {
+        demoLink.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
